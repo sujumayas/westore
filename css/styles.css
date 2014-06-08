@@ -1,0 +1,108 @@
+* {
+	box-sizing:border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color:black;
+}
+
+
+/******************
+	HEADER
+********************/
+	
+	header {
+		background-color: rgba(60, 110, 230, 0.6);
+		padding-bottom: 25px;
+		padding-right: 10px;
+	}
+
+	/******************
+		TOP-RIGHT
+	********************/
+	nav {
+		width: 100%;
+		overflow: hidden;
+		position: fixed;
+		top:0;
+	}
+
+	#top-right {
+		float: right;
+		padding: 0;
+		width: 145px;
+		margin: 0;
+	}
+
+	#top-right li {
+		background-color: skyblue;
+		display: block;
+		width: 50%;
+		float:left;
+	}
+
+	#top-right li a {
+		display: block;
+		text-align: center;
+		width: 100%;
+		padding: 10px;
+	}
+
+	/******************
+		TITLE & SUBTITLE
+	********************/
+
+	h1,
+	h2 {
+		text-align: center;
+		margin: 0;
+	}
+
+	h1 {
+		font-size: 80px;
+		padding: 5px;
+	}
+
+/******************
+	MAIN-SECTION
+********************/
+
+	/******************
+		SUB-STORE-BUTTONS
+	********************/
+	.main-section {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.sub-store-button {
+		width: 240px;
+		float: left;
+		padding: 2%;
+	}
+
+	.sub-store-button a {
+		display: block;
+		background-color: rgba(60, 110, 230, 0.6);
+		text-align: center;
+		text-transform: capitalize;
+		width: 100%;
+		overflow: hidden;
+		padding-bottom: 1%;
+		border: 1px solid black;
+	}
+
+	.sub-store-button img {
+		max-width: 100%;
+	}
+
