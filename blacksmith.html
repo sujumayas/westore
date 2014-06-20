@@ -1,15 +1,17 @@
 <section id="blacksmith-section">
 	<h2 class="store-title"></h2>
 	<div class="item-preview">
-		<div class="colorbox-image-wrapper">
-			<img class="colorbox-image" src="" alt="">
-		</div>
-		<div class="item-description-wrapper">
-			<ul>
-				<li class="item-name"></li>
-				<li class="item-cost"></li>
-				<li class="item-description"></li>
-			</ul>
+		<div id="blacksmith-store-template">
+			<script id="blacksmithTemplate" type="text/template">
+					<ol class="item" style="background : <%= color %>">
+						<li class="name"><span>Nombre:</span> <%= name %></li>
+						<li class="price"><span>Precio:</span> <%= defaultPrice %></li>
+						<!-- <li class="description"><span>Descripción:</span> <%= description %></li> -->
+						<li class="quality"><span>Calidad:</span> <%= quality %></li>
+						<li class="quantity"><span>Cantidad:</span> <%= quantity %></li>
+						<li class="category"><span>Categoría:</span> <%= category %></li>
+					</ol>
+			</script>
 		</div>
 		<div class="add-to-cart-button-wrapper">
 			<div class="add-to-cart-button">

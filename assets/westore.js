@@ -79,8 +79,6 @@
 			this.category = options.category;
 			this.quality = options.quality;
 			this.quantity = options.quantity;
-		
-		
 	};
 	
 
@@ -192,7 +190,8 @@
 		})
 
 	//Default stock: 
-		var defaultStock = [pan, sword1];
+		// var defaultStock = [pan, sword1];
+		
 
 	//Creando un user de prueba
 		var pepe = new User({
@@ -202,7 +201,6 @@
 			status: 15,
 		}); 
 
-		
 		westore.setDefaultStock();
 
 

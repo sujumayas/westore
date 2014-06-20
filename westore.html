@@ -1,50 +1,78 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title> Westore | The westerosi alternative to Amazon.com </title>
-		<link rel="stylesheet" href="css/styles.css">
-		<script src="assets/jquery-1.11.1.js"></script>
-		<script src="assets/westore.js"></script>
-	</head>
-	<body>
-		<header>
-			<nav>
-				<ul id="top-right">
-					<li id="top-right-login">
-						<a href="login.html">Login</a>
-					</li>
-					<li id="top-right-register">
-						<a href="register.html">Register</a>
-					</li>
-				</ul>	
-			</nav>
-			<a href="westore.html"><h1>Westore</h1></a>
-			<h2>The westerosi alternative to amazon.com</h2>
-		</header>
-		<div class="main-section">
-			<ul>
-				<li class="sub-store-button">
+<head>
+	<meta charset="utf-8">
+	<title>Westore | The westerosi alternative to Amazon.com</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul id="top-right">
+				<li id="top-right-login">
+					<a href="login.html">Login</a>
+				</li>
+				<li id="top-right-register">
+					<a href="register.html">Register</a>
+				</li>
+			</ul>
+		</nav>
+		<a href="westore.html">
+			<h1>Westore</h1>
+		</a>
+		<h2>The westerosi alternative to amazon.com</h2>
+	</header>
+	<div class="main-section" id="main-store-main">
+		<ul class="sub-store-wrapper">
+				<li class="sub-store-button" id="blacksmith">
 					<a href="blacksmith.html">
 						<img src="img/blacksmith.jpg" alt="The Blacksmith">The Blacksmith
 					</a>
 				</li>
-				<li class="sub-store-button">
+				<li class="sub-store-button" id="herbalist">
 					<a href="herbalist.html">
 						<img src="img/herbalist.jpg" alt="The Herbalist">The Herbalist
 					</a>
 				</li>
-				<li class="sub-store-button">
+				<li class="sub-store-button" id="weaponsmith">
 					<a href="weaponsmith.html">
 						<img src="img/weaponsmith.jpg" alt="The Weaponsmith">The Weaponsmith
 					</a>
 				</li>
-				<li class="sub-store-button">
-					<a href="marketeer.html">
+				<li class="sub-store-button" id="marketeer">
+					<a href="market.html">
 						<img src="img/marketeer.jpg" alt="The Marketeer">The Marketeer
 					</a>
 				</li>
 			</ul>
+
+		<!-- OLD BLACKSMITH SHIET -->
+		
+		<div class="template-wrapper" id="template-wrapper">
+			<script id="itemTemplate" type="text/template">
+					<ol class="item" style="background : <%= color %>">
+						<li class="name"><span>Nombre:</span> <%= name %></li>
+						<li class="price"><span>Precio:</span> <%= defaultPrice %></li>
+						<!-- <li class="description"><span>Descripción:</span> <%= description %></li>  -->
+						<li class="quality"><span>Calidad:</span> <%= quality %></li>
+						<li class="quantity"><span>Cantidad:</span> <%= quantity %></li>
+						<li class="category"><span>Categoría:</span> <%= category %></li>
+					</ol>
+			</script>
 		</div>
+	</div>
+
+	<h2>PRUEBAS</h2>
+
+	<p>
+		<label for="file_input">File:</label>
+		<input type="file" id="file_input" />
+	</p>
+	<div id="container"></div>
+	<script type="text/javascript" src="libs/jquery.js"></script>
+	<script type="text/javascript" src="libs/underscore.js"></script>
+	<script type="text/javascript" src="libs/backbone.js"></script>
+	<script type="text/javascript" src="backboneWestoreTest.js"></script>
+	<script type="text/javascript" src="assets/westore-instances.js"></script>
 	</body>
 </html>

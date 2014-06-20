@@ -84,6 +84,9 @@ a {
 		width: 80%;
 		margin: 0 auto;
 	}
+	.sub-store-wrapper {
+		overflow: hidden;
+	}
 
 	.sub-store-button {
 		width: 240px;
@@ -98,7 +101,6 @@ a {
 		text-transform: capitalize;
 		width: 100%;
 		overflow: hidden;
-		padding-bottom: 1%;
 		border: 1px solid black;
 	}
 
@@ -106,3 +108,30 @@ a {
 		max-width: 100%;
 	}
 
+	.template-wrapper {
+		width: 100%;
+		display: block;
+		overflow: auto;
+		margin: 0 auto;
+	}
+	.item-wrapper {
+		width: 15%;
+		float: left;
+		margin:1%;
+		height: 150px;
+		overflow: hidden;
+		line-height: 1.2em;
+		padding:0;
+
+	}
+	.item-wrapper li span {font-weight: bolder;}
+
+
+	.item {height: 150px;margin:0;padding-left: 10px; padding-top: 10px;}
+	.name {font-weight: bolder;}
+	.price {}
+	.price span:after {content:"$";}
+	.description {}
+	.quality {}
+	.quantity {}
+	.category {}
