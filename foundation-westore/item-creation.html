@@ -3,128 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Westore | The westerosi alternative to Amazon.com </title>
-    <link rel="stylesheet" href="foundation-westore/css/foundation.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <script src="foundation-westore/js/vendor/modernizr.js"></script>
+    <title>Westore | Item Creator </title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="js/vendor/modernizr.js"></script>
   </head>
   <body>
-
-  	<!-- Header -->
-  	<div class="row">
-  		<div class="large-12 medium-12 columns">
-			<header>
-				
-				<!-- Login/Register Menus (not yet implemented) -->
-				<button class="top-right">Login/Register</button>
-
-				<!-- Westore Title -->
-				<div class="row">
-					<div class="large-12 medium-12 columns">
-						<a href="westore.html">
-							<h1>Westore</h1>
-						</a>
-					</div>
-					<div class="large-12 medium-12 columns">
-						<h2>The westerosi alternative to Amazon.com</h2>
-					</div>
-				</div>
-			</header>
-		</div>
-  	</div>
-	
-	<!-- Main Section -->
-	<div class="row">
-		<div class="large-12 medium-12 columns">
-			<div class="main-section" id="main-store-main">
-				<ul class="sub-store-wrapper">
-				
-				<!-- Sub Store Buttons (Not yet implemented) -->
-				<div class="row">
-						<div class="large-3 medium-3 columns">
-							<li class="sub-store-button" id="blacksmith">
-								<a href="blacksmith.html">The Blacksmith</a>
-							</li>
-						</div>
-						<div class="large-3 medium-3 columns">
-							<li class="sub-store-button" id="herbalist">
-								<a href="herbalist.html">The Herbalist</a>
-							</li>
-						</div>
-						<div class="large-3 medium-3 columns">
-							<li class="sub-store-button" id="weaponsmith">
-								<a href="weaponsmith.html">The Weaponsmith</a>
-							</li>
-						</div>
-						<div class="large-3 medium-3 columns">
-							<li class="sub-store-button" id="marketeer">
-								<a href="market.html">The Marketeer</a>
-							</li>
-						</div>
-					</div>
-				</ul>
-				
-				
-					
-				
-
-				<!-- ITEM TEMPLATE -->
-				<div class="row">
-					<div class="template-wrapper" id="template-wrapper">
-						<script id="itemTemplate" type="text/template">
-								<div class="large-12 medium-12 columns">
-									<ol class="item" style="background : <%= color %>">
-										<li class="name"><span class="span-first">Name: </span><span class="span-second"><%= name %></span></li>
-										<li class="price"><span class="span-first">Price: </span><span class="span-second"><%= defaultPrice %></span></li>
-										<!-- <li class="description"><span class="span-first">Description: </span><span class="span-second"><%= description %></span></li>  -->
-										<li class="quality"><span class="span-first">Quality: </span><span class="span-second"><%= quality %></span></li>
-										<li class="quantity"><span class="span-first">Quantity: </span><span class="span-second"><%= quantity %></span></li>
-										<li class="category"><span class="span-first">Category: </span><span class="span-second"><%= category %></span></li>
-									</ol>
-								</div>
-						</script>
-					</div>
-				</div>
-
-
-			<!-- End of main section -->
-			</div>
-		</div>
-	</div>
-
-	<!-- Footer -->
-	<div class="row">
-		<div class="large-12 medium-12 columns">
-			<div class="footer-wrapper">
-				<!-- Footer Title -->
-				<div class="row">
-					<div class="large-12 medium-12 columns">
-						<h2>TESTS</h2>
-					</div>
-				</div>
-				<!-- Create an Item -->
-				<div class="row">
-					<div class="large-3 medium-3 columns">
-						<h3>Create an Item</h3>
-					</div>
-					<div class="large-3 medium-3 columns end">
-						<button id="createItem">Create Item</button>
-					</div>
-				</div>
-
-				<!-- File Input  -->
-				<div class="row">
-					<div class="large-3 medium-3 columns">
-						<h3>Upload a File</h3>
-					</div>
-					<div class="large-2 medium-2 columns end"><input type="file" id="file_input" /></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-
-	<!-- ITEM CREATOR WRAPPER -->
+    <!-- ITEM CREATOR WRAPPER -->
     <div class="create-item-wrapper">
       <button class="close-button" id="close-item-creator">X</button>
       <!-- Titulo del Form -->
@@ -133,6 +18,7 @@
           <h1>Create your Item</h1>
         </div>
       </div>
+      
 
       <!-- Form -->
       <form action="create-item">
@@ -211,33 +97,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<script type="text/javascript" src="libs/jquery.js"></script>
-	<script type="text/javascript" src="libs/underscore.js"></script>
-	<script type="text/javascript" src="libs/backbone.js"></script>
-	<script type="text/javascript" src="backboneWestoreTest.js"></script>
-	<script type="text/javascript" src="assets/westore-instances.js"></script>
-    <script src="foundation-westore/js/foundation.min.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
     <script>
       $(document).foundation();
     </script>

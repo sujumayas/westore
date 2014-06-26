@@ -9,6 +9,8 @@ body {
 
 li {
 	list-style: none;
+	float: left;
+	width: 100%;
 }
 
 a {
@@ -24,7 +26,6 @@ a {
 	header {
 		background-color: rgba(60, 110, 230, 0.6);
 		padding-bottom: 25px;
-		padding-right: 10px;
 	}
 
 	/******************
@@ -32,31 +33,8 @@ a {
 	********************/
 	nav {
 		width: 100%;
-		overflow: hidden;
-		position: fixed;
-		top:0;
 	}
 
-	#top-right {
-		float: right;
-		padding: 0;
-		width: 145px;
-		margin: 0;
-	}
-
-	#top-right li {
-		background-color: skyblue;
-		display: block;
-		width: 50%;
-		float:left;
-	}
-
-	#top-right li a {
-		display: block;
-		text-align: center;
-		width: 100%;
-		padding: 10px;
-	}
 
 	/******************
 		TITLE & SUBTITLE
@@ -65,12 +43,14 @@ a {
 	h1,
 	h2 {
 		text-align: center;
-		margin: 0;
+		margin:0;
 	}
-
+	
+	h3 {
+		margin-left: 10px;
+	}
 	h1 {
-		font-size: 80px;
-		padding: 5px;
+		font-size: 65px;
 	}
 
 /******************
@@ -81,19 +61,53 @@ a {
 		SUB-STORE-BUTTONS
 	********************/
 	.main-section {
-		width: 80%;
-		margin: 0 auto;
+		width: 100%;
+		background: dimgray;
+	}
+
+	.top-right {
+		float: right;
+	}
+
+	.footer-wrapper {
+		width: 100%;
+		background: slategrey;
 	}
 	.sub-store-wrapper {
-		overflow: hidden;
+		padding-top: 25px;
 	}
 
 	.sub-store-button {
-		width: 240px;
+		width: 200px;
+		height: 200px;
 		float: left;
-		padding: 2%;
 	}
 
+	#blacksmith {
+		background-image: url(../img/blacksmith.jpg);
+		background-size: cover;
+
+	}
+	
+	#herbalist {
+		background-image: url(../img/herbalist.jpg);
+		background-size: cover;
+
+	}
+
+	#weaponsmith {
+		background-image: url(../img/weaponsmith.jpg);
+		background-size: cover;
+		background-position: center;
+
+	}
+
+	#marketeer {
+		background-image: url(../img/marketeer.jpg);
+		background-size: cover;
+		background-position: center;
+
+	}
 	.sub-store-button a {
 		display: block;
 		background-color: rgba(60, 110, 230, 0.6);
@@ -102,6 +116,7 @@ a {
 		width: 100%;
 		overflow: hidden;
 		border: 1px solid black;
+		margin-top:87%;
 	}
 
 	.sub-store-button img {
@@ -115,23 +130,108 @@ a {
 		margin: 0 auto;
 	}
 	.item-wrapper {
-		width: 15%;
-		float: left;
-		margin:1%;
-		height: 150px;
 		overflow: hidden;
-		line-height: 1.2em;
-		padding:0;
+		width: 15.4rem;
+		float:left;
+		margin-top: 20px;
+	}
+	.item-wrapper span{
+		display: inline-block;
+		float: left;
+		width: 50%;
+	}
+	.item-wrapper .span-first{
+		font-weight: bolder;
+	}
+	.item-wrapper .span-second{
+		font-weight: 200;
 
 	}
-	.item-wrapper li span {font-weight: bolder;}
-
-
-	.item {height: 150px;margin:0;padding-left: 10px; padding-top: 10px;}
+	.item {min-height: 150px;margin:0;line-height: 1.3;padding-left: 5px;}
 	.name {font-weight: bolder;}
 	.price {}
-	.price span:after {content:"$";}
+	.price .span-second:before {content:"$";}
 	.description {}
 	.quality {}
 	.quantity {}
 	.category {}
+
+
+
+
+
+
+	/*
+		                                               
+		88 888888888888 88888888888 88b           d88  
+		88      88      88          888b         d888  
+		88      88      88          88`8b       d8'88  
+		88      88      88aaaaa     88 `8b     d8' 88  
+		88      88      88"""""     88  `8b   d8'  88  
+		88      88      88          88   `8b d8'   88  
+		88      88      88          88    `888'    88  
+		88      88      88888888888 88     `8'     88  
+		                                               
+		                                                                                               
+		  ,ad8888ba,  88888888ba  88888888888        db   888888888888 88   ,ad8888ba,   888b      88  
+		 d8"'    `"8b 88      "8b 88                d88b       88      88  d8"'    `"8b  8888b     88  
+		d8'           88      ,8P 88               d8'`8b      88      88 d8'        `8b 88 `8b    88  
+		88            88aaaaaa8P' 88aaaaa         d8'  `8b     88      88 88          88 88  `8b   88  
+		88            88""""88'   88"""""        d8YaaaaY8b    88      88 88          88 88   `8b  88  
+		Y8,           88    `8b   88            d8""""""""8b   88      88 Y8,        ,8P 88    `8b 88  
+		 Y8a.    .a8P 88     `8b  88           d8'        `8b  88      88  Y8a.    .a8P  88     `8888  
+		  `"Y8888Y"'  88      `8b 88888888888 d8'          `8b 88      88   `"Y8888Y"'   88      `888  
+
+		88888888888 ,ad8888ba,   88888888ba  88b           d88  
+		88         d8"'    `"8b  88      "8b 888b         d888  
+		88        d8'        `8b 88      ,8P 88`8b       d8'88  
+		88aaaaa   88          88 88aaaaaa8P' 88 `8b     d8' 88  
+		88"""""   88          88 88""""88'   88  `8b   d8'  88  
+		88        Y8,        ,8P 88    `8b   88   `8b d8'   88  
+		88         Y8a.    .a8P  88     `8b  88    `888'    88  
+		88          `"Y8888Y"'   88      `8b 88     `8'     88  
+		                                                        
+		                                                        
+	*/
+
+
+
+	.create-item-wrapper {
+		width: 60%;
+		margin:40px auto;
+		padding: 25px;
+		background: aquamarine;
+		/*display:none;*/
+	}
+
+	.create-item-wrapper span {
+		font-size: 12px;
+		font-weight: 200;
+		font-style: italic;
+		padding-top: 10px;
+	}
+
+	.create-item-wrapper .row {
+		min-height: 80px;
+	}
+
+	.create-item-wrapper .columns:last-child {
+		margin-top:16px;
+	}
+
+	.create-item-wrapper h1 {
+		font-size: 55px;
+	}
+
+	.close-button {
+		float: right;
+	}
+
+
+
+
+
+
+
+
+
