@@ -129,6 +129,12 @@ a {
 		overflow: auto;
 		margin: 0 auto;
 	}
+	.template-wrapper ul {
+		overflow: auto;
+		margin: 0 auto;
+	}
+
+
 	.item-wrapper {
 		overflow: hidden;
 		width: 15.4rem;

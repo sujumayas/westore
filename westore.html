@@ -65,24 +65,25 @@
 				</ul>
 				
 				
-					
-				
 
 				<!-- ITEM TEMPLATE -->
 				<div class="row">
-					<div class="template-wrapper" id="template-wrapper">
-						<script id="itemTemplate" type="text/template">
-								<div class="large-12 medium-12 columns">
-									<ol class="item" style="background : <%= color %>">
-										<li class="name"><span class="span-first">Name: </span><span class="span-second"><%= name %></span></li>
-										<li class="price"><span class="span-first">Price: </span><span class="span-second"><%= defaultPrice %></span></li>
-										<!-- <li class="description"><span class="span-first">Description: </span><span class="span-second"><%= description %></span></li>  -->
-										<li class="quality"><span class="span-first">Quality: </span><span class="span-second"><%= quality %></span></li>
-										<li class="quantity"><span class="span-first">Quantity: </span><span class="span-second"><%= quantity %></span></li>
-										<li class="category"><span class="span-first">Category: </span><span class="span-second"><%= category %></span></li>
-									</ol>
-								</div>
-						</script>
+					<div class="template-wrapper" >
+						<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4" id="template-wrapper">
+							<script id="itemTemplate" type="text/template">
+										<div class="large-12 medium-12 columns">
+											<ol class="item" style="background : <%= color %>">
+												<li class="name"><span class="span-first">Name: </span><span class="span-second"><%= name %></span></li>
+												<li class="price"><span class="span-first">Price: </span><span class="span-second"><%= defaultPrice %></span></li>
+												<!-- <li class="description"><span class="span-first">Description: </span><span class="span-second"><%= description %></span></li>  -->
+												<li class="quality"><span class="span-first">Quality: </span><span class="span-second"><%= quality %></span></li>
+												<li class="quantity"><span class="span-first">Quantity: </span><span class="span-second"><%= quantity %></span></li>
+												<li class="category"><span class="span-first">Category: </span><span class="span-second"><%= category %></span></li>
+											</ol>
+										</div>
+							</script>
+						</ul>
+							
 					</div>
 				</div>
 
@@ -122,122 +123,26 @@
 			</div>
 		</div>
 	</div>
-	
-
-	<!-- ITEM CREATOR WRAPPER -->
-    <div class="create-item-wrapper">
-      <button class="close-button" id="close-item-creator">X</button>
-      <!-- Titulo del Form -->
-      <div class="row">
-        <div class="large-12 columns">
-          <h1>Create your Item</h1>
-        </div>
-      </div>
-
-      <!-- Form -->
-      <form action="create-item">
-
-        <!-- Item Name Input -->
-        <div class="row">
-          <div class="large-6 medium-6 columns input">
-          <label id="name-input" for="name">Name</label>
-          <input type="text" name="name" placeholder="Name">
-        </div>
-        <div class="large-6 medium-6 columns">
-          <span>Please, think of something descriptive unless the items is a magic, well known, epic item. If you want, you can use the quality suggested names to create beautifull names like "Broken bastardsword" or "Beautiful and polished ring". But that means that the users will know its quality in advance. (read default price description)</span>
-          </div>
-        </div>
-
-        <!-- Item Description input -->
-        <div class="row">
-          <div class="large-6 medium-6 columns input">
-            <label  id="description-input" for="description">Description</label>
-            <textarea class="" id="" name="description" ></textarea>
-          </div>
-          <div class="large-6 medium-6 columns">
-            <span>This is a description. You whould write a description like this, but about the item you are about to create here. Good luck with that!</span>
-          </div>
-        </div>
-
-        <!-- Item Category input -->
-        <div class="row">
-          <div class="large-6 medium-6 columns input">
-            <label   id="category-input" >Category
-              <select>
-                <option value="weapon">Weapon</option>
-                <option value="armor">Armor</option>
-                <option value="herbs">Herb and Poison</option>
-                <option value="market">Market Item</option>
-              </select>
-            </label>
-          </div>
-          <div class="large-6 medium-6 columns">
-            <span>This is one of the most important item attributes. Please select one of the existing categories or create one. Every new category items will be sold on the market until you create a specific store for them. </span>
-          </div>
-        </div>
-        
-        <!-- Item Quality input -->
-        <div class="row">
-          <div class="large-6 medium-6 columns input">
-            <label id="quality-input" for="quality">Quality</label>
-            <input type="range" min="-100" max="100" name="quality" placeholder="Quality">
-          </div>
-          <div class="large-6 medium-6 columns">
-            <span>The item Quality is going to be a number between -100 (pretty destroyed item) and +100 (Absolutely gorgeous perfect condition surrealisticly clean and new item). This will affect the shown price of the item. For example, if the item has +100 Quality, the store is going to try and sell it as expensive as it can. But, if the item is -100 Quality, they probably are going to sell it at normal default price. If the appraisal skill of the user who is buying is good, they can change this default store behaviors. </span>
-          </div>
-        </div>
-
-
-        <!-- Item Price input -->
-        <div class="row">
-          <div class="large-6 medium-6 columns input">
-            <label  id="price-input" for="defaultPrice">Default Price</label>
-            <input type="number" min="0" name="defaultPrice" placeholder="Default Price">
-          </div>
-          <div class="large-6 medium-6 columns">
-            <span>This is the Default Price. This is the price that should appear in the Book. When this item is shown to the users its going to be modified by their skill in Appraisal, the year they are playing and the special conditions you set when creating a Store. Actually, you can modify the final price for an item whenever you want, but this Default Price stays the same.</span>
-          </div>
-        </div>
-
-        <!-- Titulo del Form -->
-        <div class="row">
-          <div class="large-4 columns large-offset-8 end">
-            <input type="submit" class="button" name="submit" value="Crear">
-          </div>
-        </div>
-
-      </form>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	<!-- Loading vendor libs -->
 	<script type="text/javascript" src="libs/jquery.js"></script>
 	<script type="text/javascript" src="libs/underscore.js"></script>
 	<script type="text/javascript" src="libs/backbone.js"></script>
-	<script type="text/javascript" src="backboneWestoreTest.js"></script>
-	<script type="text/javascript" src="assets/westore-instances.js"></script>
-    <script src="foundation-westore/js/foundation.min.js"></script>
+
+	<!-- Loading Westore main App Elements -->
+	<script type="text/javascript" src="assets/main.js"></script>
+	<script type="text/javascript" src="assets/models.js"></script>
+	<script type="text/javascript" src="assets/collections.js"></script>
+	<script type="text/javascript" src="assets/views.js"></script>
+	<script type="text/javascript" src="assets/router.js"></script>
+	<script type="text/javascript" src="assets/sync.js"></script>
+    
+    <!-- Testing -->
+    <script type="text/javascript" src="assets/testing-westore.js"></script>
+
+    <!-- Loading Foundation -->
+    <script type="text/javascript" src="foundation-westore/js/foundation.min.js"></script>
+
+    
     <script>
       $(document).foundation();
     </script>

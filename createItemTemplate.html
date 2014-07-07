@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Westore | Create an Item </title>
+    <link rel="stylesheet" href="foundation-westore/css/foundation.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+   
+  <!-- ITEM CREATOR WRAPPER -->
+    <div class="create-item-wrapper" id="create-item-wrapper">
+      <button class="close-button" id="close-item-creator">X</button>
+      <!-- Titulo del Form -->
+      <div class="row">
+        <div class="large-12 columns">
+          <h1>Create your Item</h1>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form action="create-item">
+
+        <!-- Item Name Input -->
+        <div class="row">
+          <div class="large-6 medium-6 columns input">
+          <label id="name-input" for="name">Name</label>
+          <input type="text" name="name" placeholder="Name">
+        </div>
+        <div class="large-6 medium-6 columns">
+          <span>Please, think of something descriptive unless the items is a magic, well known, epic item. If you want, you can use the quality suggested names to create beautifull names like "Broken bastardsword" or "Beautiful and polished ring". But that means that the users will know its quality in advance. (read default price description)</span>
+          </div>
+        </div>
+
+        <!-- Item Description input -->
+        <div class="row">
+          <div class="large-6 medium-6 columns input">
+            <label  id="description-input" for="description">Description</label>
+            <textarea class="" id="" name="description" ></textarea>
+          </div>
+          <div class="large-6 medium-6 columns">
+            <span>This is a description. You whould write a description like this, but about the item you are about to create here. Good luck with that!</span>
+          </div>
+        </div>
+
+        <!-- Item Category input -->
+        <div class="row">
+          <div class="large-6 medium-6 columns input">
+            <label   id="category-input" >Category
+              <select>
+                <option value="weapon">Weapon</option>
+                <option value="armor">Armor</option>
+                <option value="herbs">Herb and Poison</option>
+                <option value="market">Market Item</option>
+              </select>
+            </label>
+          </div>
+          <div class="large-6 medium-6 columns">
+            <span>This is one of the most important item attributes. Please select one of the existing categories or create one. Every new category items will be sold on the market until you create a specific store for them. </span>
+          </div>
+        </div>
+        
+        <!-- Item Quality input -->
+        <div class="row">
+          <div class="large-6 medium-6 columns input">
+            <label id="quality-input" for="quality">Quality</label>
+            <input type="range" min="-100" max="100" name="quality" placeholder="Quality">
+          </div>
+          <div class="large-6 medium-6 columns">
+            <span>The item Quality is going to be a number between -100 (pretty destroyed item) and +100 (Absolutely gorgeous perfect condition surrealisticly clean and new item). This will affect the shown price of the item. For example, if the item has +100 Quality, the store is going to try and sell it as expensive as it can. But, if the item is -100 Quality, they probably are going to sell it at normal default price. If the appraisal skill of the user who is buying is good, they can change this default store behaviors. </span>
+          </div>
+        </div>
+
+
+        <!-- Item Price input -->
+        <div class="row">
+          <div class="large-6 medium-6 columns input">
+            <label  id="price-input" for="defaultPrice">Default Price</label>
+            <input type="number" min="0" name="defaultPrice" placeholder="Default Price">
+          </div>
+          <div class="large-6 medium-6 columns">
+            <span>This is the Default Price. This is the price that should appear in the Book. When this item is shown to the users its going to be modified by their skill in Appraisal, the year they are playing and the special conditions you set when creating a Store. Actually, you can modify the final price for an item whenever you want, but this Default Price stays the same.</span>
+          </div>
+        </div>
+
+        <!-- Titulo del Form -->
+        <div class="row">
+          <div class="large-4 columns large-offset-8 end">
+            <input type="submit" class="button" name="submit" value="crear-item">
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+  </body>
+</html>

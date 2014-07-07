@@ -1,0 +1,55 @@
+TABLAS
+
+	All items:			+ Nombre 
+						+ Cost 
+						+ Description Excerpt (maybe) 
+
+	All but-some:		+ Weigth
+	Food, Poisons,
+	Steeds, 
+
+	All Weapons			+ Damage
+	All Armors			+ Armor Rating
+
+DESPLEGABLES:
+
+	Armaduras: 			+ Armor Rating
+						+ Armor Penalty
+						+ Bulk
+
+	Armas:				+ Damage 
+						+ Quality (revisar Weapono Grade) 
+						+ Speciality (Skill del cual depende) 
+						+ Training (entrenamiento requerido)
+						+ Qualities (Talentos del arma)
+						+ Reach
+
+	Clothing:			+ Categorías para cada rango de precios
+
+	Poison: 			+ Delivery (Cómo se da)
+						+ Virulence
+						+ Frequency
+						+ Toxisity
+						+ Diagnosis
+						+ Effects
+						+ Recovery
+	
+	Monturas: 			+ Agility->Quickness     (Ojo están en la sección de animales)
+						+ Agility->Balance
+						+ Athletics->Jump
+						+ Athletics->Run
+						+ Athletics->Strenght
+						+ Awarness->Notice
+						+ Cunning->
+						+ Endurance->Resilience
+						+ Endurance->Stamina
+						+ Fighting->
+						+ Will->
+						+ Combat Defense
+						+ Health
+						+ Natural Armor
+						+ Movement
+						+ Bite 
+						+ Hooves / Powerfull Hooves
+
+
