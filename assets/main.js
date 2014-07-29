@@ -3,7 +3,8 @@
 		Models : {},
 		Views : {},
 		Collections : {},
-		Helpers : {}
+		Helpers : {},
+		Router : {}
 	};
 	
 	window.template = function(id){

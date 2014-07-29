@@ -11,6 +11,12 @@ Westore.Views.ItemView = Backbone.View.extend({
 	events : {
 		'click .item' : 'buy',
 		'click .name': 'showAlert',
+		'someSpecialEvent' : 'routingClear'
+		
+	},
+	routingClear : function(name){
+		console.log(name);
+		console.log('ya estamos mas cerca');
 	},
 	buy : function(e){
 		var selected = $(e.currentTarget);
@@ -87,9 +93,30 @@ Westore.Views.BuyedItemView = Backbone.View.extend({
 		this.model.on('destroy', this.remove, this);
 	},
 	events : {
-		'click .delete-button': 'destroy'
+		'click .delete-button': 'destroy',
+		'click .mas' : 'masQuantity',
+		'click .menos' : 'menosQuantity'
 	},
-
+	masQuantity : function(e){
+		var selected = $(e.currentTarget);
+		if(!selected.hasClass('imposiburu')){  // Esto está aquí para cuando tengamos que evitar que compren más!
+			var currentQuantity = this.model.attributes.quantity;
+			this.model.set('quantity', currentQuantity+1);
+			console.log(this.model.attributes.quantity);
+		}
+		
+	},
+	menosQuantity : function(e){
+		var selected = $(e.currentTarget);
+		if(!selected.hasClass('imposiburu')){ // Esto está aquí para cuando tengamos que evitar que compren más!
+			var currentQuantity = this.model.attributes.quantity;
+			this.model.set('quantity', currentQuantity-1);
+			console.log(this.model.attributes.quantity);
+		}
+		if(this.model.attributes.quantity == 0){
+			this.model.destroy();
+		}
+	},
 	destroy : function(){
 		this.model.destroy();
 		this.render();
@@ -119,8 +146,12 @@ Westore.Views.Stock = Backbone.View.extend({
 	initialize: function(){
 		this.listenTo(this.collection, 'add', this.addItemToStockView);
 		this.listenTo(this.collection, 'change', this.addItemToStockView);
+		this.listenTo(this.collection, 'eventito', this.changeViewToName);
 	},
-	
+	changeViewToName : function(name){
+		console.log(name);
+		console.log('anything bitch, i want anything!');
+	},
 	addItemToStockView: function(model, collection){
 		var itemView = new Westore.Views.ItemView({ model: model });
 		// console.log(model, itemView);

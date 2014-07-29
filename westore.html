@@ -43,22 +43,22 @@
 				<div class="row">
 						<div class="large-3 medium-3 columns">
 							<li class="sub-store-button" id="blacksmith">
-								<a href="blacksmith.html">The Blacksmith</a>
+								<a href="#blacksmith" id="blacksmith-button">The Blacksmith</a>
 							</li>
 						</div>
 						<div class="large-3 medium-3 columns">
 							<li class="sub-store-button" id="herbalist">
-								<a href="herbalist.html">The Herbalist</a>
+								<a href="#herbalist"id="herbalist-button">The Herbalist</a>
 							</li>
 						</div>
 						<div class="large-3 medium-3 columns">
 							<li class="sub-store-button" id="weaponsmith">
-								<a href="weaponsmith.html">The Weaponsmith</a>
+								<a href="#weaponsmith"id="weaponsmith-button">The Weaponsmith</a>
 							</li>
 						</div>
 						<div class="large-3 medium-3 columns">
 							<li class="sub-store-button" id="marketeer">
-								<a href="market.html">The Marketeer</a>
+								<a href="#marketeer"id="marketeer-button">The Marketeer</a>
 							</li>
 						</div>
 					</div>
@@ -93,7 +93,7 @@
 					<div class="template-wrapper" >
 						<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4" id="template-wrapper">
 							<script id="itemTemplate" type="text/template">
-								<div class="large-12 medium-12 columns">
+								<div class="large-12 medium-12 columns <%= category %>">
 									<ol class="item" data-id="<%= id %>" style="background : <%= color %>">
 										<li class="name">
 											<span class="span-first">Name: </span>
@@ -232,6 +232,8 @@
 							</li>
 						</ol>
 						<button class="delete-button" id="delete-button">X</button>
+						<span class="mas">+</span>
+						<span class="menos">-</span>
 					</div>
 				</script>
 			</ul>
@@ -239,6 +241,7 @@
 	</div>
 	<div class="store-buttons">
 		<button id="buy-item">Buy (export)</button>
+		
 	</div>
 
 
