@@ -2,7 +2,7 @@ Westore.Models.Item = Backbone.Model.extend({
 	urlRoot: '/items',
 	defaults: {
 		name : "",
-		price : undefined,
+		defaultPrice : undefined,
 		quality: undefined,
 		quantity: undefined,
 		description:"",
@@ -25,8 +25,12 @@ Westore.Models.Item = Backbone.Model.extend({
 		if (validationErrors.length > 0){
 			return validationErrors;
 		}
-	}
+	},
+
+
+
 });
+
 
 Westore.Models.User = Backbone.Model.extend({
 	urlRoot: '/users',

@@ -1,9 +1,9 @@
 (function(){
 	window.Westore = {
-		Models : {/*[Item, User]*/},
-		Views : {/*[StockView, ShoppingCartView, InventoryView]*/},
-		Collections : {/*[Stock, ShoppingCart, Inventory]*/},
-		Helpers : {/*[Search,]*/}
+		Models : {},
+		Views : {},
+		Collections : {},
+		Helpers : {}
 	};
 	
 	window.template = function(id){

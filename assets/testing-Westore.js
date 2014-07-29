@@ -2,12 +2,18 @@
 
 	//Instanciamos un Stock
 	var store = new Westore.Collections.Stock();
-	
+	var myShoppingCart = new Westore.Collections.ShoppingCart();
 
 	// Y creamos la instancia de la vista
 	var storeView = new Westore.Views.Stock({
 		collection: store,
 		template: _.template( $('#template-wrapper').html() ),
+	});
+
+	//Iniciamos la vista del ShoppingCart
+	var ShoppingCartView = new Westore.Views.ShoppingCart({
+		collection: myShoppingCart,
+		template: _.template( $('#cart-container').html() ),
 	});
 
 	//Chekeamos por file input
@@ -31,11 +37,37 @@
 			// console.log(defaultStock);
 			for(var i=0;i<defaultStock.length;i++){
 				store.add(defaultStock[i]);
-				console.log(store);
+				// console.log(myShoppingCart);
 			}
 		});
 
 		reader.readAsText(file);
 
 	});
+
+	//Create the logic of buying bitch
+		
+		
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+
+
 					
