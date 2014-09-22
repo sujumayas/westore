@@ -20,29 +20,8 @@
 	var fileInput = document.getElementById('file_input'),
 			container = document.getElementById('container');
 
-
-	//File input listener
-	fileInput.addEventListener('change', function(e) {
-		var file = e.target.files[0];
-		var reader = new FileReader();
-
-		reader.addEventListener('load', function(e2) {
-			// console.log(e2.target.result);
-			var json = $.parseJSON(e2.target.result); 
-			window.defaultStock = [];
-			for(var i=0;i<json.length;i++){
-					defaultStock.push(json[i]);
-
-			}
-			// console.log(defaultStock);
-			for(var i=0;i<defaultStock.length;i++){
-				store.add(defaultStock[i]);
-				// console.log(myShoppingCart);
-			}
-		});
-
-		reader.readAsText(file);
-
+	$('#buy-item').on('click', function(){
+		finalBuy();
 	});
 
 //Agregar DEFAULTS: 
@@ -55,7 +34,7 @@ defaultStock1 = [{"id":1,"name":"Bread","defaultPrice":9460,"quality":55,"quanti
 	{"id":7,"name":"Pork","defaultPrice":1163,"quality":-71,"quantity":0,"category":"herbalist","description":"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.","color":"#b18da1"},
 	{"id":8,"name":"Duck","defaultPrice":4343,"quality":0,"quantity":0,"category":"marketeer","description":"Phasellus in felis. Donec semper sapien a libero. Nam dui.","color":"#72a396"},
 	{"id":9,"name":"Brazier","defaultPrice":7487,"quality":22,"quantity":0,"category":"blacksmith","description":"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.","color":"#c0dff4"},
-	{"id":10,"name":"Milk of the poppy","defaultPrice":8385,"quality":-87,"quantity":0,"category":"herbalist","description":"Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.","color":"#65aa95"}]
+	{"id":10,"name":"Milk of the poppy","defaultPrice":100,"quality":-87,"quantity":0,"category":"herbalist","description":"Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.","color":"#65aa95"}]
 
 
 // console.log(defaultStock);

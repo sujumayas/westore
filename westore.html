@@ -1,12 +1,15 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Westore | The westerosi alternative to Amazon.com </title>
     <link rel="stylesheet" href="foundation-westore/css/foundation.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <script src="foundation-westore/js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="ExpandingSearchBar/css/default.css">
+    <link rel="stylesheet" href="ExpandingSearchBar/css/component.css">
+	<link rel="stylesheet" href="css/styles.css" />
+    <!-- <script src="foundation-westore/js/vendor/modernizr.js"></script> -->
+    <script type="text/javascript" src="js/modernizr.custom.js"></script>
   </head>
   <body>
 
@@ -33,6 +36,24 @@
 		</div>
   	</div>
 	
+	<!-- Aside bitches INVENTORY !! -->
+	<div class="aside inventory">
+		<div class="item-list-wrapper"> 
+			<!-- Aquí entrarán los items en modo lista -->
+			<ul class="buyed-item-list" id="buyedItemsList">
+				<li>
+					<span class="name">Name</span>
+					<span class="quantity">N°</span>
+					<span class="price">Price per unit</span>
+				</li>
+			</ul>
+		</div>
+		<div class="cost-wrapper">
+
+			<p class="cost-text">Total: <span class="cost" id="cost"></span></p>
+		</div>
+	</div>
+
 	<!-- Main Section -->
 	<div class="row">
 		<div class="large-12 medium-12 columns">
@@ -115,6 +136,7 @@
 											<span class="span-first">Category: </span>
 											<span class="span-second"><%= category %></span>
 										</li>
+										<div class="hover-item-buyer"><span>Click here</span><span>to</span><span>buy this item</span><div>
 									</ol>
 								</div>
 							</script>
@@ -128,52 +150,9 @@
 	</div>
 
 
+	
 
-
-	<!-- 
-		                                                                            
-		88888888888 ,ad8888ba,     ,ad8888ba, 888888888888 88888888888 88888888ba   
-		88         d8"'    `"8b   d8"'    `"8b     88      88          88      "8b  
-		88        d8'        `8b d8'        `8b    88      88          88      ,8P  
-		88aaaaa   88          88 88          88    88      88aaaaa     88aaaaaa8P'  
-		88"""""   88          88 88          88    88      88"""""     88""""88'    
-		88        Y8,        ,8P Y8,        ,8P    88      88          88    `8b    
-		88         Y8a.    .a8P   Y8a.    .a8P     88      88          88     `8b   
-		88          `"Y8888Y"'     `"Y8888Y"'      88      88888888888 88      `8b  
-		                                                                            
-		                                                                            
-	 -->
-
-
-	<div class="row">
-		<div class="large-12 medium-12 columns">
-			<div class="footer-wrapper">
-				<!-- Footer Title -->
-				<div class="row">
-					<div class="large-12 medium-12 columns">
-						<h2>TESTS</h2>
-					</div>
-				</div>
-				<!-- Create an Item -->
-				<div class="row">
-					<div class="large-3 medium-3 columns">
-						<h3>Create an Item</h3>
-					</div>
-					<div class="large-3 medium-3 columns end">
-						<button id="createItem">Create Item</button>
-					</div>
-				</div>
-
-				<!-- File Input  -->
-				<div class="row">
-					<div class="large-3 medium-3 columns">
-						<h3>Upload a File</h3>
-					</div>
-					<div class="large-2 medium-2 columns end"><input type="file" id="file_input" /></div>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 
 
 	<!-- 
@@ -241,8 +220,15 @@
 	</div>
 	<div class="store-buttons">
 		<button id="buy-item">Buy (export)</button>
-		
+		<div id="sb-search" class="sb-search">
+			<form>
+				<input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="search" id="search">
+				<input class="sb-search-submit" type="submit" value="">
+				<span class="sb-icon-search"></span>
+			</form>
+		</div>
 	</div>
+
 
 
 	<!-- 
@@ -263,21 +249,28 @@
 	<script type="text/javascript" src="libs/jquery.js"></script>
 	<script type="text/javascript" src="libs/underscore.js"></script>
 	<script type="text/javascript" src="libs/backbone.js"></script>
+	
 
 	<!-- Loading Westore main App Elements -->
-	<script type="text/javascript" src="assets/greedy-westore.js"></script>
+	<script type="text/javascript" src="assets/functions.js"></script>
 	<script type="text/javascript" src="assets/main.js"></script>
 	<script type="text/javascript" src="assets/models.js"></script>
 	<script type="text/javascript" src="assets/collections.js"></script>
 	<script type="text/javascript" src="assets/views.js"></script>
-	<script type="text/javascript" src="assets/router.js"></script>
 	<script type="text/javascript" src="assets/sync.js"></script>
     
     <!-- Testing -->
     <script type="text/javascript" src="assets/testing-westore.js"></script>
+    <script type="text/javascript" src="assets/router.js"></script>
 
     <!-- Loading Foundation -->
     <script type="text/javascript" src="foundation-westore/js/foundation.min.js"></script>
+
+    <script type="text/javascript" src="ExpandingSearchBar/js/classie.js"></script>
+	<script type="text/javascript" src="ExpandingSearchBar/js/uisearch.js"></script>
+	<script>
+		new UISearch( document.getElementById( 'sb-search' ) );
+	</script>
 
     
     <script>

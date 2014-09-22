@@ -26,6 +26,8 @@ a {
 	header {
 		background-color: rgba(60, 110, 230, 0.6);
 		padding-bottom: 25px;
+		border-left: 2px solid black;
+		border-right: 2px solid black;
 	}
 
 	/******************
@@ -63,10 +65,14 @@ a {
 	.main-section {
 		width: 100%;
 		background: dimgray;
+		border: 2px solid black;
 	}
 
 	.top-right {
-		float: right;
+		position: fixed;
+		top: 17px;
+		right: 57px;
+		margin-bottom: 0;
 	}
 
 	.footer-wrapper {
@@ -74,12 +80,13 @@ a {
 		background: slategrey;
 	}
 	.sub-store-wrapper {
-		padding-top: 25px;
+		padding-top: 0;
+		margin: 0;
 	}
 
 	.sub-store-button {
-		width: 200px;
-		height: 200px;
+		width: 100%;
+		height: 100%;
 		float: left;
 	}
 
@@ -246,12 +253,13 @@ a {
 
 .main-section {
 	position: relative;
+	
 }
 
 button#buy-item {
 	position: fixed;
-	bottom: 10px;
-	left: 0px;
+	top: 83px;
+	right: 77px;
 }
 
 
@@ -313,7 +321,118 @@ button#buy-item {
 	right: 15px;
 }
 
+.store-buttons {
+	position: absolute;
+	width: 25%;
+	top: -19px;
+	right: 226px;
+}
+
+li.item-wrapper {
+	color: black;
+}
+
+.aside.inventory {
+	background-color: #98181f;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 226px;
+	bottom: 0;
+	border: 1px solid black;
+}
+.cost-wrapper{
+	background: black;
+	position: fixed;
+	width: 225px;
+	bottom: 0;
+}
+.cost-text{
+	margin: 0;
+	height: 45px;
+	line-height: 45px;
+}
+.cost{}
+
+
+.item {
+	position: relative;
+}
+
+.hover-item-buyer {
+	display: none;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	background: rgba(50,50,50,0.9);
+	color: black;
+}
+
+div.hover-item-buyer span {
+	width: 100%;
+	margin-top: 30px;
+}
+
+
+.item:hover .hover-item-buyer{
+	display: block;
+}
 
 
 
+
+
+
+.buyed-item-list {
+	margin: 0;
+	margin-top: 15px;
+	font-size: 8px;
+}
+
+.buyed-item-list li {
+	width: 100%;
+	height: 20px;
+	border-bottom: 1px dotted black;
+	padding-left: 10px;
+}
+
+.buyed-item-list li:first-child span{
+	text-align: center;
+	font-weight: bolder;
+	text-transform: uppercase;
+}
+
+.buyed-item-list li span {
+	display: inline-block;
+	border-left: 1px solid black;
+	padding-left: 2px;
+}
+
+.buyed-item-list li span:nth-child(2){
+	text-align: center;
+}
+.buyed-item-list .name {
+	width: 95px;
+}
+.buyed-item-list .quantity {
+	width: 15px;
+}
+.buyed-item-list .price {
+	width: 100px;
+}
+
+
+
+
+
+
+/*
+Azul main-content : #afefef;
+body : #fff;
+
+
+*/
 

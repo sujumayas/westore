@@ -10,13 +10,7 @@ Westore.Views.ItemView = Backbone.View.extend({
 
 	events : {
 		'click .item' : 'buy',
-		'click .name': 'showAlert',
-		'someSpecialEvent' : 'routingClear'
 		
-	},
-	routingClear : function(name){
-		console.log(name);
-		console.log('ya estamos mas cerca');
 	},
 	buy : function(e){
 		var selected = $(e.currentTarget);
@@ -56,14 +50,7 @@ Westore.Views.ItemView = Backbone.View.extend({
 		// console.log(myShoppingCart.get(thisGuyId).attributes.quantity);
 		
 		
-		
-		
 	},
-	showAlert: function(){
-		var newName = prompt('Change the name:', this.model.get('name'));
-		this.model.set('name', newName);
-	},
-
 	remove: function(){
 		this.$el.remove();
 	},
@@ -102,7 +89,8 @@ Westore.Views.BuyedItemView = Backbone.View.extend({
 		if(!selected.hasClass('imposiburu')){  // Esto está aquí para cuando tengamos que evitar que compren más!
 			var currentQuantity = this.model.attributes.quantity;
 			this.model.set('quantity', currentQuantity+1);
-			console.log(this.model.attributes.quantity);
+			console.log('New Quantity: '+this.model.attributes.quantity);
+			// setBuyingList(resetTotalPrice(this.model.attributes.id, this.model.attributes.quantity, this.model.attributes.defaultPrice));
 		}
 		
 	},
@@ -111,15 +99,18 @@ Westore.Views.BuyedItemView = Backbone.View.extend({
 		if(!selected.hasClass('imposiburu')){ // Esto está aquí para cuando tengamos que evitar que compren más!
 			var currentQuantity = this.model.attributes.quantity;
 			this.model.set('quantity', currentQuantity-1);
-			console.log(this.model.attributes.quantity);
+			console.log('New Quantity: '+this.model.attributes.quantity);
+			// setBuyingList(resetTotalPrice(this.model.attributes.id, this.model.attributes.quantity, this.model.attributes.defaultPrice));
 		}
 		if(this.model.attributes.quantity == 0){
 			this.model.destroy();
 		}
 	},
 	destroy : function(){
+		this.model.set('quantity', 0);
 		this.model.destroy();
 		this.render();
+		// setBuyingList(resetTotalPrice(this.model.attributes.id, this.model.attributes.quantity, this.model.attributes.defaultPrice));
 	},
 	remove: function(){
 		this.$el.remove();
@@ -134,6 +125,7 @@ Westore.Views.BuyedItemView = Backbone.View.extend({
 			// console.log(this.model.attributes.actualPrice)
 		}
 		this.$el.html( this.template(this.model.toJSON()) );
+		setBuyingList(resetTotalPrice(this.model.attributes.id, this.model.attributes.quantity, this.model.attributes.defaultPrice, this.model.attributes.name));
 		return this;
 	}
 
@@ -142,11 +134,50 @@ Westore.Views.BuyedItemView = Backbone.View.extend({
 
 Westore.Views.Stock = Backbone.View.extend({
 	el: '#template-wrapper',
-	
+	firstRenderization : true,
+	savedElement : [],
+	stockStatus : 'inactive',
+	stockViewRoute : function(name){
+		if(this.stockStatus == 'inactive'){
+			if(this.firstRenderization){
+				this.savedElement = $.extend(true, [], this.$el.children('.item-wrapper').children());
+				this.firstRenderization = false;
+			}
+			console.log("Console Log de savedElement : ", this.savedElement);
+			var self = this.savedElement;
+			console.log(this);
+		
+			// console.log(this.$el.children('.item-wrapper'));
+			//Necesito encontrar una manera de hacer RESTART aquí.... 
+			var itemWrapper = this.savedElement;
+			console.log("Console Log de ITEM WRAPPER :  ", itemWrapper);
+			_.forEach(itemWrapper, function(index, val) {
+				 /* iterate through array or object */
+				var newIndex = $(itemWrapper[val]);
+				if(newIndex.hasClass(name)){
+					//NOW RENDER THE FUCKING SHIET:
+					console.log("Foreach Class NAME : ", $(itemWrapper[val]).parent());
+				}else{
+					console.log("Foreach NOT Class NAME : ", $(itemWrapper[val]).parent());
+					$(itemWrapper[val]).parent().remove();
+				}
+			});
+			this.stockStatus = 'active';	
+		}else{
+			
+			// window.location.reload();  // Esto trae problemas porque RESETEA la página!!! 
+			this.stockStatus = 'inactive';
+		}
+	},
+	querySearchRoute : function(query){
+		console.log('another query...');
+		console.log(query);
+		// $('.item-wrapper > query')
+	},
 	initialize: function(){
 		this.listenTo(this.collection, 'add', this.addItemToStockView);
 		this.listenTo(this.collection, 'change', this.addItemToStockView);
-		this.listenTo(this.collection, 'eventito', this.changeViewToName);
+		// this.listenTo(this.collection, 'eventito', this.changeViewToName);
 	},
 	changeViewToName : function(name){
 		console.log(name);

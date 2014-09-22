@@ -1,16 +1,22 @@
 
-
 Westore.Router = Backbone.Router.extend({
     routes: {
-        ":name": "stockViewRoute",
-        "/search/:query": "queryViewRoute"
+        // "*any" : "default",
+        ":name": "stockView",
+        ":query": "querySearch"
     },
-    stockViewRoute : function(name){
+    default: function( ){
+        console.log('loading shopping cart...');
+        // myShoppingCart.load();   NOT WORKING!!
+    },
+    stockView : function(name){
         //Aquí solo deberíamos llamar a la vista filtrada por cada "name"
-        console.log('not yet implemented');
+        storeView.stockViewRoute(name);
     },
-    queryViewRoute : function(query){
-        $('.item-wrapper > query')
+    querySearch : function(query){
+         console.log('querying...');
+         storeView.querySearchRoute(query);
+       
     }
 });
 
